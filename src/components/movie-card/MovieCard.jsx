@@ -18,8 +18,7 @@ const MovieCard = props => {
     const bg = apiConfig.w500Image(item.poster_path || item.backdrop_path);
 
     return (
-        // <Link to={link}>
-        <Link to='/'>
+        <Link to={link}>
             <div className="movie-card" style={{backgroundImage: `url(${bg})`}}>
                 <Button>
                     <i className="bx bx-play"></i>

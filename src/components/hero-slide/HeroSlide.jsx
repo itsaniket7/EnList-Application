@@ -39,7 +39,7 @@ const HeroSlide = () => {
                 grabCursor={true}
                 spaceBetween={0}
                 slidesPerView={1}
-                // autoplay={{delay: 3000}}
+                autoplay={{delay: 3000}}
             >
                 {
                     movieItems.map((item, i) => (
@@ -91,20 +91,12 @@ const HeroSlideItem = props => {
                     <h2 className="title">{item.title}</h2>
                     <div className="overview">{item.overview}</div>
                     <div className="btns">
-                        {/* <Button onClick={() => hisrory.push('/movie/' + item.id)}>
+                         <Button onClick={() => hisrory.push('/movie/' + item.id)}>
                             Watch now
                         </Button>
                         <OutlineButton onClick={setModalActive}>
                             Watch trailer
-                        </OutlineButton> */}
-
-                        <Button>
-                            Watch now
-                        </Button>
-                        <OutlineButton>
-                            Watch trailer
                         </OutlineButton>
-
                     </div>
                 </div>
                 <div className="hero-slide__item__content__poster">

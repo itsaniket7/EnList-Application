@@ -16,13 +16,11 @@ const headerNav = [
     },
     {
         display: 'Movies',
-        // path: '/movie'
-        path: '/#'
+        path: '/movie'
     },
     {
         display: 'TV Series',
-        // path: '/tv'
-        path: '/#'
+        path: '/tv'
     }
 ];
 
