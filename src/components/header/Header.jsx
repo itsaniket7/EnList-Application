@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import Button, { OutlineButton } from '../button/Button';
+import { Button1 } from '../button/Button';
 
 
 
@@ -64,9 +64,15 @@ const Header = () => {
                     }
                 </ul>
                 <div className="login_nav">
+                        <Link to="/Login">
+                            <Button1 className="signin">Sign In</Button1>
+                        </Link>
+                        <div class="space">
+                        </div>
                         <Link to="/#">
-                            <OutlineButton className="login">Login</OutlineButton>
-                        </Link></div>
+                            <Button1 className="signup">Sign Up</Button1>
+                        </Link>
+                </div>
             </div>
         </div>
     );

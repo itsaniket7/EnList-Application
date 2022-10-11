@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
+import About from './components/about/about';
 
 import Routes from './config/Routes';
 
@@ -16,7 +17,8 @@ function App() {
                 <>
                     <Header {...props}/>
                     <Routes/>
-                    <Footer/>
+                    <About/>
+                    {/* <Footer/> */}
                 </>
             )}/>
         </BrowserRouter>
