@@ -31,7 +31,7 @@
 }
 
 .teams12:hover {
-    background: rgb(125, 123, 123);
+    background: rgb(74, 73, 73);
     border-radius: 12px;
 }
 
@@ -52,7 +52,7 @@
     font-style: italic;
     color: rgb(181, 174, 174);
 }
-
+x
 .about12 {
     margin: 20px 0;
     font-weight: lighter;
@@ -73,7 +73,13 @@
 .social-links12 a:hover {
     transform: scale(1.5);
 }
-
+.teams12:hover {
+    transform: scale(1.1);
+}
+.name12:hover {
+    transform: scale(1.1);
+    color: #1fbeff;
+}
 .social-links a i {
     color: rgb(234, 218, 218);
 }
