@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Button1 } from '../button/Button';
+import tejas from '../../assets/tejas.jpg';
 
 
 
@@ -63,7 +64,7 @@ const Header = () => {
                         ))
                     }
                 </ul>
-                <div className="login_nav">
+                {/* <div className="login_nav">
                         <Link to="/Login">
                             <Button1 className="signin">Sign In</Button1>
                         </Link>
@@ -72,7 +73,50 @@ const Header = () => {
                         <Link to="/#">
                             <Button1 className="signup">Sign Up</Button1>
                         </Link>
+                </div> */}
+                <div>
+                   <button class="sign_in" role="button">Sign In</button>
+                    <div class="space"></div>
+                    <button class="sign_up" role="button">Sign Up</button>
+                    {/* <div class="space1"></div> */}
+                    <div className="user-pic">
+                        <img src={tejas} alt="" onclick="toggleMenu()"/>
+                    </div>
                 </div>
+                <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="images/user.png"/>
+                        <h3> Tejas Vaidya </h3>
+                    </div>
+                    {/* <hr> */}
+
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/profile.png"/>
+                        <p>Edit Profile</p>
+                        <span> - </span>
+                    </a>
+
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/setting.png"/>
+                        <p>Settings and Privacy</p>
+                        <span> - </span>
+                    </a>
+
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/help.png"/>
+                        <p>Help & Support</p>
+                        <span> - </span>
+                    </a>
+
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/logout.png"/>
+                        <p>Logout</p>
+                        <span> -</span>
+                    </a>
+
+                </div>
+            </div>
             </div>
         </div>
     );

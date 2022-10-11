@@ -40,6 +40,12 @@ button {
     height: auto;
     display: inline-block;
   }
+
+  .space1 {
+    width: 40px;
+    height: auto;
+    display: inline-block;
+  }
 // .btn-btn1 {
 //     // display: flex;
 //     // flex-direction: row;
@@ -64,3 +70,79 @@ button {
     padding: 0.25rem 1.5rem;
     font-size: 1rem;
 }
+
+/* CSS */
+.sign_in {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+//   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.sign_in:hover,
+.sign_in:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #1fbeff;
+}
+
+.sign_in:active {
+  opacity: .5;
+}
+
+.sign_up {
+    background: #1fbeff;
+    border: 1px solid #1fbeff;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+  }
+  
+  .sign_up:hover,
+  .sign_up:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #1fbeff;
+  }
+  
+  .sign_up:active {
+    opacity: .5;
+  }
+
+
+ 
