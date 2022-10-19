@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Button1 } from '../button/Button';
-import tejas from '../../assets/tejas.jpg';
+import vaibhav from '../../assets/vaibhavi.jpg';
 
 
 
@@ -80,7 +80,7 @@ const Header = () => {
                     <button class="sign_up" role="button">Sign Up</button>
                     {/* <div class="space1"></div> */}
                     <div className="user-pic">
-                        <img src={tejas} alt="" onclick="toggleMenu()"/>
+                        <img src={vaibhav} alt="" onclick="toggleMenu()"/>
                     </div>
                 </div>
                 <div class="sub-menu-wrap" id="subMenu">
