@@ -43,3 +43,53 @@
 .movie-card:hover {
     transform: scale(0.95);
 }
+@keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.25);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .heart {
+    color: rgb(255, 255, 255);
+    opacity: 0.3;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .heart:hover {
+    animation: heartbeat 1s infinite;
+    fill: red;
+    color: red;
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+
+  .heart1 {
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .heart1:hover {
+    // animation: heartbeat 1s infinite;
+    fill: red;
+    color: red;
+    opacity: 1;
+    transition: opacity 500ms;
+  }

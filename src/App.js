@@ -5,7 +5,7 @@ import './App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+// import Footer from './components/footer/Footer';
 import About from './components/about/about';
 
 import Routes from './config/Routes';
@@ -13,7 +13,8 @@ import Routes from './config/Routes';
 import { AuthContextProvider } from './context/AuthContext';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Home from './pages/Home';
+// import Home from './pages/Home';    
+import Account from './pages/Account';
 
 function App() {
     return (
@@ -36,6 +37,11 @@ function App() {
                 path='/login'
                 exact
                 component={Login}
+            />
+            <Route
+                path='/account'
+                exact
+                component={Account}
             />
             {/* <Route
                 path='/'

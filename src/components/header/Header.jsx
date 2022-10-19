@@ -90,11 +90,11 @@ const Header = () => {
                 </div> */}
                 {user?.email ? (
                     <div>
-                        <Link to="/Login">
+                        <Link to="/Account">
                         <button class="sign_in" role="button">Account</button>
                         </Link>
                             <div class="space"></div>
-                        <Link to="/Signup">
+                        <Link to="/">
                             <button onClick={handleLogout} class="sign_up" role="button">Logout</button>
                         </Link>
                             {/* <div class="space1"></div> */}
