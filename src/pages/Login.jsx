@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 
 const Login = () => {
@@ -7,14 +7,14 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('')
   const { user, logIn } = UserAuth();
-  const navigate = useNavigate();
+  const navigate = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('')
     try {
       await logIn(email, password)
-      navigate('/')
+      navigate.push("/");
     } catch (error) {
       console.log(error);
       setError(error.message)

@@ -1,14 +1,15 @@
 import React, { useRef, useEffect } from 'react';
-import { Button1 } from '../button/Button';
+// import { Button1 } from '../button/Button';
 import vaibhav from '../../assets/vaibhavi.jpg';
 
-
-
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 
 import './header.scss';
 
 import logo from '../../assets/tmovie.png';
+
+import { UserAuth } from '../../context/AuthContext';
+
 
 const headerNav = [
     {
@@ -22,15 +23,28 @@ const headerNav = [
     {
         display: 'TV Series',
         path: '/tv'
-    }
+    },
 ];
 
 const Header = () => {
+    
+    const { user, logOut } = UserAuth();
+    const navigate = useHistory()
+
+    const handleLogout = async () => {
+        try {
+          await logOut();
+          navigate.push("/");
+        } catch (error) {
+          console.log(error);
+        }
+      };
 
     const { pathname } = useLocation();
     const headerRef = useRef(null);
 
     const active = headerNav.findIndex(e => e.path === pathname);
+    
 
     useEffect(() => {
         const shrinkHeader = () => {
@@ -74,15 +88,32 @@ const Header = () => {
                             <Button1 className="signup">Sign Up</Button1>
                         </Link>
                 </div> */}
-                <div>
-                   <button class="sign_in" role="button">Sign In</button>
-                    <div class="space"></div>
-                    <button class="sign_up" role="button">Sign Up</button>
-                    {/* <div class="space1"></div> */}
-                    <div className="user-pic">
-                        <img src={vaibhav} alt="" onclick="toggleMenu()"/>
+                {user?.email ? (
+                    <div>
+                        <Link to="/Login">
+                        <button class="sign_in" role="button">Account</button>
+                        </Link>
+                            <div class="space"></div>
+                        <Link to="/Signup">
+                            <button onClick={handleLogout} class="sign_up" role="button">Logout</button>
+                        </Link>
+                            {/* <div class="space1"></div> */}
+                            <div className="user-pic">
+                                <img src={vaibhav} alt="" onclick="toggleMenu()"/>
+                            </div>
                     </div>
-                </div>
+                ) : (
+                    <div>
+                        <Link to="/Login">
+                        <button class="sign_in" role="button">Sign In</button>
+                        </Link>
+                            <div class="space"></div>
+                        <Link to="/Signup">
+                            <button class="sign_up" role="button">Sign Up</button>
+                        </Link>
+                    </div>
+                )}
+
                 <div class="sub-menu-wrap" id="subMenu">
                 <div class="sub-menu">
                     <div class="user-info">
@@ -116,9 +147,10 @@ const Header = () => {
                     </a>
 
                 </div>
-            </div>
+                </div>
             </div>
         </div>
+        
     );
 }
 
