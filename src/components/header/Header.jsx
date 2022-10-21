@@ -44,14 +44,14 @@ const Header = () => {
     const headerRef = useRef(null);
 
     const active = headerNav.findIndex(e => e.path === pathname);
+    
+
     useEffect(() => {
         const shrinkHeader = () => {
-            if(document.body.scrollHeight > 0){
-                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                    headerRef.current.classList.add('shrink');
-                } else {
-                    headerRef.current.classList.remove('shrink');
-                }
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                headerRef.current.classList.add('shrink');
+            } else {
+                headerRef.current.classList.remove('shrink');
             }
         }
         window.addEventListener('scroll', shrinkHeader);
@@ -105,7 +105,7 @@ const Header = () => {
                 ) : (
                     <div>
                         <Link to="/Login">
-                        <button class="sign_in" role="button" >Sign In</button>
+                        <button class="sign_in" role="button">Sign In</button>
                         </Link>
                             <div class="space"></div>
                         <Link to="/Signup">
