@@ -1,0 +1,108 @@
+/* body {
+    background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0,0,0, .6)), url(background.jpg);
+    overflow-x: hidden;
+} */
+@use "../scss/" as *;
+.container121 {
+    // height: 680px;
+}
+.logo12 {
+    width: 300px;
+    fill: #1fbeff;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+.error{
+    padding: 0.75rem; 
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; 
+    background-color: #F87171; 
+    font-weight: 600;   
+    font-size: 15px;
+}
+form {
+    color: #fff;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: .3rem;
+    width: 450px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 60px;
+    margin-top: 6rem;
+}
+form h1 {
+    margin-bottom: 28px;
+}
+.form-group {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 16px;
+    position: relative;
+}
+.form-group input {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    border: none;
+    border-radius: .3rem;
+    outline: none;
+    color: #fff;
+    padding: 16px 20px 0;
+    font-size: 1rem;
+}
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #8c8c8c;
+    pointer-events: none;
+    transition: 200ms ease-in-out transform,
+                200ms ease-in-out font-size;
+}
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+    transform: translateY(-1.25rem);
+    font-size: .7rem;
+}
+ 
+form button {
+    width: 100%;
+    height: 48px;
+    font-size: 1rem;
+    background-color: #1fbeff;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: .3rem;
+    cursor: pointer;
+    margin: 0px 0 20px;
+}
+
+.signup {
+    margin-top: 20px;
+}
+.signup p {
+    color: #737373;
+}
+.signup p a {
+    color: #fff;
+    text-decoration: none;
+}
+.signup p a:hover {
+    text-decoration: underline;
+}
+.g-btn {
+    width: 100% !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    font-size: 15px !important;
+    margin: 20px 0 12px;
+  }
+  .g-btn > div,
+  .g-btn > div > svg {
+    width: 48px !important;
+    height: 48px !important;
+  }

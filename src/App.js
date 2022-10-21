@@ -13,13 +13,36 @@ import Routes from './config/Routes';
 import { AuthContextProvider } from './context/AuthContext';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-// import Home from './pages/Home';    
 import Account from './pages/Account';
 
 function App() {
     return (
         <AuthContextProvider>
         <BrowserRouter>
+        <Switch>
+            <Route 
+                path='/signup'
+                component={Signup}
+            />
+            {/* <Route
+                path='/login'
+                exact
+                component={Login}
+            /> */}
+            <Route render={props => (
+                <>
+                    <Header {...props}/>
+                </>
+            )}
+            path='/login'
+                exact
+                component={Login}
+            />
+            <Route
+                path='/account'
+                exact
+                component={Account}
+            /> 
             <Route render={props => (
                 <>
                     <Header {...props}/>
@@ -28,26 +51,6 @@ function App() {
                     {/* <Footer/> */}
                 </>
             )}/>
-            <Switch>
-            <Route
-                path='/signup'
-                component={Signup}
-            />
-            <Route
-                path='/login'
-                exact
-                component={Login}
-            />
-            <Route
-                path='/account'
-                exact
-                component={Account}
-            />
-            {/* <Route
-                path='/'
-                exact
-                component={Home}
-            /> */}
             </Switch>
         </BrowserRouter>
         </AuthContextProvider>

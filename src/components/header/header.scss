@@ -17,6 +17,22 @@
     }
 }
 
+.logo12 {
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    @include flex(center, unset);
+
+    img {
+        margin-right: 10px;
+        width: 50px;
+
+        @include mobile {
+            width: 30px;
+            margin-right: 0;
+        }
+    }
+}
 .user-pic {
     font-size: 2.5rem;
     font-weight: 600;
