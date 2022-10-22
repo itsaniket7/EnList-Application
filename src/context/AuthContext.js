@@ -5,8 +5,10 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from 'firebase/auth';
-import {setDoc,doc} from 'firebase/firestore'
+import {setDoc,doc} from 'firebase/firestore';
 
 const AuthContext = createContext();
 
@@ -17,7 +19,7 @@ export function AuthContextProvider({ children }) {
     createUserWithEmailAndPassword(auth, email, password);
     setDoc(doc(db, 'users', email), {
         savedShows: []
-    })
+    }) 
   }
 
   function logIn(email, password) {
@@ -27,6 +29,29 @@ export function AuthContextProvider({ children }) {
   function logOut() {
     return signOut(auth);
   }
+
+  function googleSignIn() {
+    const googleAuthProvider = new GoogleAuthProvider();
+    return signInWithPopup(auth, googleAuthProvider)
+    .then((result) => {
+      const name = result.user.displayName;
+      const email = result.user.email;
+      const profilePic = result.user.photoURL;
+
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("profilePic", profilePic);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
+
+  // function googleSignUp()
+  // {
+  //   const googleAuthProvider = new GoogleAuthProvider();
+  //   return signInWithPopup(auth, googleAuthProvider);
+  // }
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -38,7 +63,7 @@ export function AuthContextProvider({ children }) {
   });
 
   return (
-    <AuthContext.Provider value={{ signUp, logIn, logOut, user }}>
+    <AuthContext.Provider value={{ signUp, logIn, logOut, user, googleSignIn}}>
       {children}
     </AuthContext.Provider>
   );
@@ -47,3 +72,4 @@ export function AuthContextProvider({ children }) {
 export function UserAuth() {
   return useContext(AuthContext);
 }
+

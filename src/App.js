@@ -20,21 +20,22 @@ function App() {
     return (
         <AuthContextProvider>
         <BrowserRouter>
-            <Route render={props => (
-                <>
-                    <Header {...props}/>
-                    <Routes/>
-                    <About/>
-                    {/* <Footer/> */}
-                </>
-            )}/>
-            <Switch>
-            <Route
+        <Switch>
+            <Route 
                 path='/signup'
                 component={Signup}
             />
-            <Route
+            {/* <Route
                 path='/login'
+                exact
+                component={Login}
+            /> */}
+            <Route render={props => (
+                <>
+                    <Header {...props}/>
+                </>
+            )}
+            path='/login'
                 exact
                 component={Login}
             />
@@ -42,12 +43,15 @@ function App() {
                 path='/account'
                 exact
                 component={Account}
-            />
-            {/* <Route
-                path='/'
-                exact
-                component={Home}
-            /> */}
+                /> 
+                <Route render={props => (
+                    <>
+                        <Header {...props}/>
+                        <Routes/>
+                        <About/>
+                        {/* <Footer/> */}
+                    </>
+                )}/>
             </Switch>
         </BrowserRouter>
         </AuthContextProvider>

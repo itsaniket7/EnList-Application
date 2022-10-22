@@ -1,13 +1,7 @@
 import React, { useRef, useEffect } from 'react';
-// import { Button1 } from '../button/Button';
-import vaibhav from '../../assets/vaibhavi.jpg';
-
 import { Link, useLocation, useHistory } from 'react-router-dom';
-
 import './header.scss';
-
 import logo from '../../assets/tmovie.png';
-
 import { UserAuth } from '../../context/AuthContext';
 
 
@@ -28,7 +22,7 @@ const headerNav = [
 
 const Header = () => {
     
-    const { user, logOut } = UserAuth();
+    const { user, logOut } = UserAuth() ;
     const navigate = useHistory()
 
     const handleLogout = async () => {
@@ -48,10 +42,12 @@ const Header = () => {
 
     useEffect(() => {
         const shrinkHeader = () => {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                headerRef.current.classList.add('shrink');
-            } else {
-                headerRef.current.classList.remove('shrink');
+            if(document.body.scrollHeight > 700){
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    headerRef.current.classList.add('shrink');
+                } else {
+                    headerRef.current.classList.remove('shrink');
+                }
             }
         }
         window.addEventListener('scroll', shrinkHeader);
@@ -78,16 +74,6 @@ const Header = () => {
                         ))
                     }
                 </ul>
-                {/* <div className="login_nav">
-                        <Link to="/Login">
-                            <Button1 className="signin">Sign In</Button1>
-                        </Link>
-                        <div class="space">
-                        </div>
-                        <Link to="/#">
-                            <Button1 className="signup">Sign Up</Button1>
-                        </Link>
-                </div> */}
                 {user?.email ? (
                     <div>
                         <Link to="/Account">
@@ -97,9 +83,8 @@ const Header = () => {
                         <Link to="/">
                             <button onClick={handleLogout} class="sign_up" role="button">Logout</button>
                         </Link>
-                            {/* <div class="space1"></div> */}
                             <div className="user-pic">
-                                <img src={vaibhav} alt="" onclick="toggleMenu()"/>
+                                <img src={localStorage.getItem("profilePic")} alt="" onclick="toggleMenu()"/>
                             </div>
                     </div>
                 ) : (

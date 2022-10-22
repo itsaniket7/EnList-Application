@@ -4,6 +4,7 @@ import { db } from '../../firebase';
 import { updateDoc, doc, onSnapshot } from 'firebase/firestore';
 import { AiOutlineClose } from 'react-icons/ai';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import "./saved.scss";
 
     const SavedShows = () => {
     const [movies, setMovies] = useState([]);
@@ -38,39 +39,39 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
   
     return (
       <>
-        <h2 className='text-white font-bold md:text-xl p-4'>My Shows</h2>
-        <div className='relative flex items-center group'>
+        <h2 className='heading'>My Shows</h2>
+        <div className='container221'>
           <MdChevronLeft
             onClick={slideLeft}
-            className='bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
+            className='leftbt'
             size={40}
           />
           <div
             id={'slider'}
-            className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'
+            className='slider1'
           >
-            {movies.map((item) => (
+            {movies?.map((item) => (
               <div
                 key={item.id}
-                className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'
+                className='card'
               >
                 <img
-                  className='w-full h-auto block'
+                  className='img1'
                   src={`https://image.tmdb.org/t/p/w500/${item?.img}`}
                   alt={item?.title}
                 />
-                <div className='absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white'>
-                  <p className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
+                <div className='card2'>
+                  <p className='p1'>
                     {item?.title}
                   </p>
-                  <p onClick={()=> deleteShow(item.id)} className='absolute text-gray-300 top-4 right-4'><AiOutlineClose /></p>
+                  <p onClick={()=> deleteShow(item.id)} className='p2'><AiOutlineClose /></p>
                 </div>
               </div>
             ))}
           </div>
           <MdChevronRight
             onClick={slideRight}
-            className='bg-white right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
+            className='rightbt'
             size={40}
           />
         </div>

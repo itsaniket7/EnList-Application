@@ -1,0 +1,112 @@
+@use "../../scss/" as *;
+
+.heading{
+    padding: 1rem; 
+    color: #1fbeff; 
+    font-weight: 700; 
+
+
+    @media (min-width: 768px) { 
+    font-size: 1.25rem;
+    line-height: 1.75rem; 
+    }
+
+}
+.container221{
+    display: flex; 
+    position: relative; 
+    align-items: center; 
+}
+.leftbt{
+    position: absolute; 
+    left: 0; 
+    z-index: 10; 
+    background-color: #1fbeff; 
+    border-radius: 9999px; 
+    cursor: pointer; 
+    opacity: 0.7;     
+}
+.leftbt:hover {
+         opacity: 1; 
+}
+.slider1{
+    overflow-x: scroll; 
+    position: relative; 
+    white-space: nowrap; 
+    width: 100%; 
+    height: 100%;    
+}
+.slider1::-webkit-scrollbar {
+    display: none;
+}
+.card{
+    display: inline-block; 
+    position: relative; 
+    padding: 0.5rem; 
+    cursor: pointer; 
+    width: 160px;
+    
+    @media (min-width: 640px) { 
+      width: 200px;
+     }
+    @media (min-width: 768px) { 
+      width: 240px;
+     }
+    @media (min-width: 1024px) { 
+      width: 280px;
+     }    
+}
+.img1{
+    display: block; 
+    width: 100%;
+    height: auto;
+    opacity: 0.7;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card2{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    color: #ffffff; 
+    width: 100%; 
+    height: 100%; 
+    opacity: 0;    
+}
+.card2:hover {
+    opacity: 1; 
+}
+.p1{
+    display: flex; 
+    font-size: 0.75rem;
+    line-height: 1rem; 
+    font-weight: 700; 
+    text-align: center; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    
+    @media (min-width: 768px) { 
+      font-size: 0.875rem;
+      line-height: 1.25rem; 
+     }
+}
+.p2{
+    position: absolute; 
+    top: 1rem; 
+    right: 1rem; 
+    color: #D1D5DB;     
+}
+.rightbt{
+    position: absolute; 
+    right: 0; 
+    z-index: 10; 
+    background-color: #1fbeff; 
+    border-radius: 9999px; 
+    cursor: pointer; 
+    opacity: 0.7; 
+}
+.rightbt:hover {
+         opacity: 1; 
+}
