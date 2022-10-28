@@ -37,9 +37,9 @@ const about = () => {
 
                 <div class="social-links12">
                     <a href="https://www.linkedin.com/in/aniket-sawant-80b649206/"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/aniket-sawant-80b649206"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/aniket-sawant-80b649206"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/aniket-sawant-80b649206"><i class="fa fa-github"></i></a>
                 </div>
             </div>
             
@@ -51,9 +51,9 @@ const about = () => {
 
                 <div class="social-links12">
                     <a href="https://www.linkedin.com/in/vaibhav-udamale-5824b51b0/"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/vaibhav-udamale-5824b51b0/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/vaibhav-udamale-5824b51b0/"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/vaibhav-udamale-5824b51b0/"><i class="fa fa-github"></i></a>
                 </div>
             </div>
 

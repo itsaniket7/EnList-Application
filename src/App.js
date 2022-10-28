@@ -13,7 +13,7 @@ import Routes from './config/Routes';
 import { AuthContextProvider } from './context/AuthContext';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-// import Home from './pages/Home';    
+import Profile from './pages/Profile';    
 import Account from './pages/Account';
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
                     <Header {...props}/>
                 </>
             )}
-            path='/login'
+                path='/login'
                 exact
                 component={Login}
             />
@@ -43,15 +43,20 @@ function App() {
                 path='/account'
                 exact
                 component={Account}
-                /> 
-                <Route render={props => (
-                    <>
-                        <Header {...props}/>
-                        <Routes/>
-                        <About/>
-                        {/* <Footer/> */}
-                    </>
-                )}/>
+            /> 
+            <Route
+                path='/profile'
+                exact
+                component={Profile}
+            /> 
+            <Route render={props => (
+                <>
+                <Header {...props}/>
+                <Routes/>
+                <About/>
+                {/* <Footer/> */}
+            </>
+            )}/>
             </Switch>
         </BrowserRouter>
         </AuthContextProvider>

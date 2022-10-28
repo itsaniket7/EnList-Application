@@ -10,6 +10,8 @@ import { category } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 import { FiHeart } from "react-icons/fi";
 import { FaHeart } from 'react-icons/fa';
+import { FaRegBookmark } from 'react-icons/fa';
+import { FaBookmark } from 'react-icons/fa';
 
 import { UserAuth } from '../../context/AuthContext';
 import { db } from '../../firebase';
@@ -24,6 +26,7 @@ const MovieCard = props => {
     const bg = apiConfig.w500Image(item.poster_path || item.backdrop_path);
 
     const [like, setLike] = useState(false);
+    const [plan, setPlan] = useState(false);
     const [saved, setSaved] = useState(false);
     const { user } = UserAuth();
 
@@ -38,6 +41,7 @@ const MovieCard = props => {
             id: item.id,
             title: item.title,
             img: item.backdrop_path,
+            link:link,
             }),
         });
         } else {
@@ -45,16 +49,40 @@ const MovieCard = props => {
         }
     };
 
+    const plantowatch = async () => {
+        if (user?.email) {
+        setPlan(!plan);
+        setSaved(true);
+        await updateDoc(movieID, {
+            planShows: arrayUnion({
+            id: item.id,
+            title: item.title,
+            img: item.backdrop_path,
+            link:link,
+            }),
+        });
+        } else {
+        alert('Please log in to add a movie to plan to watch');
+        }
+    };
+
     return (
             <Link to={"#"}>
                 <div className="movie-card" style={{ backgroundImage: `url(${bg})` }}>
-            <p onClick={saveShow}>
-                {like ? (
-                    <FaHeart className="heart1" />
-                ) : (
-                    <FiHeart className="heart" />
-                )}
-            </p>
+                <p onClick={saveShow}>
+                    {like ? (
+                        <FaHeart className="heart1" />
+                    ) : (
+                        <FiHeart className="heart" />
+                    )}
+                </p>
+                <p class="plan" onClick={plantowatch}>
+                    {plan ? (
+                        <FaBookmark className="book1" />
+                    ) : (
+                        <FaRegBookmark className="book" />
+                    )}
+                </p>
             <Link to={link}>
                 <Button>
                     <i className="bx bx-play"></i>

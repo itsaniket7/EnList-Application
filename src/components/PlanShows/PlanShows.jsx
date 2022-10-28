@@ -5,9 +5,9 @@ import { updateDoc, doc, onSnapshot } from 'firebase/firestore';
 import { AiOutlineClose } from 'react-icons/ai';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { Link, useHistory } from 'react-router-dom';
-import "./saved.scss";
+import "./plan.scss";
 
-    const SavedShows = () => {
+    const PlanShows = () => {
     
     const history = useHistory();
     const [movies, setMovies] = useState([]);
@@ -24,7 +24,7 @@ import "./saved.scss";
   
     useEffect(() => {
       onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
-        setMovies(doc.data()?.savedShows);
+        setMovies(doc.data()?.planShows);
       });
     }, [user?.email]);
   
@@ -33,7 +33,7 @@ import "./saved.scss";
         try {
           const result = movies.filter((item) => item.id !== passedID)
           await updateDoc(movieRef, {
-              savedShows: result
+              planShows: result
           })
         } catch (error) {
             console.log(error)
@@ -50,7 +50,7 @@ import "./saved.scss";
   
     return (
       <>
-        <h2 className='heading'>Watched</h2>
+        <h2 className='heading'>Plan to Watch</h2>
         <div className='container221'>
           <MdChevronLeft
             onClick={slideLeft}
@@ -89,6 +89,6 @@ import "./saved.scss";
     );
   };
   
-  export default SavedShows;
+  export default PlanShows;
 
   

@@ -15,10 +15,12 @@ const AuthContext = createContext();
 export function AuthContextProvider({ children }) {
   const [user, setUser] = useState({});
 
-  function signUp(email, password) {
+  function signUp(name,email, password) {
     createUserWithEmailAndPassword(auth, email, password);
+    localStorage.setItem("name", name);
     setDoc(doc(db, 'users', email), {
-        savedShows: []
+        savedShows: [],
+        planShows:[]
     }) 
   }
 
@@ -27,6 +29,9 @@ export function AuthContextProvider({ children }) {
   }
 
   function logOut() {
+    localStorage.setItem("name", null);
+    localStorage.setItem("email", null);
+    localStorage.setItem("profilePic", 'https://cdn-icons-png.flaticon.com/512/149/149071.png' );
     return signOut(auth);
   }
 
@@ -46,12 +51,6 @@ export function AuthContextProvider({ children }) {
       console.log(error);
     });
   }
-
-  // function googleSignUp()
-  // {
-  //   const googleAuthProvider = new GoogleAuthProvider();
-  //   return signInWithPopup(auth, googleAuthProvider);
-  // }
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

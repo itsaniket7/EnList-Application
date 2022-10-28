@@ -38,7 +38,8 @@ export const signInWithGoogle = () => {
       localStorage.setItem("profilePic", profilePic);
 
       setDoc(doc(db, 'users', email), {
-        savedShows: []
+        savedShows: [],
+        planShows: []
       }) 
     })
     .catch((error) => {

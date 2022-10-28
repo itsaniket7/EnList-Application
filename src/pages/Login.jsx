@@ -7,12 +7,30 @@ import GoogleButton from "react-google-button";
 
 import "./login.scss";
 
+import { Icon } from 'react-icons-kit'
+import {eye} from 'react-icons-kit/feather/eye'
+import {eyeOff} from 'react-icons-kit/feather/eyeOff'
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('')
   const { googleSignIn, logIn} = UserAuth();
   const navigate = useHistory();
+
+  const [type, setType]=useState('password');
+  const [icon, setIcon]=useState(eyeOff);
+
+  const handleToggle=()=>{    
+    if(type==='password'){
+      setIcon(eye);      
+      setType('text');
+    }
+    else{
+      setIcon(eyeOff);     
+      setType('password');
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,8 +69,9 @@ const Login = () => {
                         <label>Email</label>
                     </div>
                     <div class="form-group">
-                        <input onChange={(e) => setPassword(e.target.value)} type="password" required/>
+                        <input onChange={(e) => setPassword(e.target.value)} type={type}required/>
                         <label>Password</label>
+                        <span onClick={handleToggle}><Icon icon={icon} size={20}/></span>
                     </div>
                     <button>Sign In</button>
                     <hr />

@@ -8,6 +8,7 @@
     padding-top: 160%;
     border-radius: $border-radius;
     margin-bottom: 1rem;
+    transition: .4s;
 
     .btn {
         position: absolute;
@@ -90,6 +91,43 @@
     // animation: heartbeat 1s infinite;
     fill: red;
     color: red;
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+  
+  .book {
+    color: rgb(255, 255, 255);
+    opacity: 0.3;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .book:hover {
+    animation: heartbeat 1s infinite;
+    fill: $main-color;
+    color: $main-color;
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+
+  .book1 {
+    color: $main-color;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .book1:hover {
+    // animation: heartbeat 1s infinite;
+    fill: $main-color;
+    color: $main-color;
     opacity: 1;
     transition: opacity 500ms;
   }
